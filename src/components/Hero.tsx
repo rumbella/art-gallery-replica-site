@@ -1,0 +1,54 @@
+
+import React from 'react';
+
+const Hero = () => {
+  return (
+    <div className="relative min-h-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('/lovable-uploads/a1afdb98-7fab-4c55-a7fb-7e64af04db47.png')`
+        }}
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+      
+      {/* Content */}
+      <div className="relative z-10 text-center text-white">
+        <h1 className="text-6xl md:text-8xl font-light tracking-wider mb-4">
+          JENYA<br />DATSKO
+        </h1>
+      </div>
+      
+      {/* Quote Text - Top */}
+      <div className="absolute top-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60">
+        THINK ABOUT THE PAST ONLY IF ITS<br />
+        MEMORIES ARE PLEASANT TO YOU
+      </div>
+      
+      {/* Quote Text - Right */}
+      <div className="absolute top-1/3 right-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
+        NO ONE APPRECIATES SOLID FUND<br />
+        THAT IS TOO MUCH.
+      </div>
+      
+      {/* Quote Text - Bottom */}
+      <div className="absolute bottom-32 right-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
+        I THINK THAT LIFE IS ABOUT FIGURING<br />
+        OUT WHAT WE CAN AND CANNOT DO.<br />
+        OTHERWISE, HOW DO WE KNOW<br />
+        WHEN WE HAVE DONE WELL?
+      </div>
+      
+      {/* Bottom Quote */}
+      <div className="absolute bottom-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60">
+        I'LL THINK ABOUT DAY OF THING LATER, WHEN<br />
+        I FIND THE STRENGTH TO RISE UP.
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
