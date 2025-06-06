@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white">
         <h1 className="text-6xl md:text-8xl font-light tracking-wider mb-4">
-          JENYA<br />DATSKO
+          GIACOMO<br />PIUSSI
         </h1>
       </div>
       
