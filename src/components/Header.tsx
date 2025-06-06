@@ -15,6 +15,10 @@ const Header = () => {
           <button className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
             galley
           </button>
+           <button className="flex items-center text-white text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
+          MENU
+          <Menu className="ml-2 w-4 h-4" />
+        </button>
         </div>
       </div>
     </header>
