@@ -8,7 +8,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/lovable-uploads/a1afdb98-7fab-4c55-a7fb-7e64af04db47.png')`
+          backgroundImage: `url('https://res.cloudinary.com/thinkdigital/image/upload/v1749206072/Couple-in-harbor-50x40-2018-oil-on-canvas_oedrid.jpg')`
         }}
       />
       
