@@ -25,7 +25,7 @@ const Hero = () => {
    
       
       {/* Quote Text - Bottom */}
-      <div className="absolute bottom-32 right-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
+      <div className="absolute bottom-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
         I THINK THAT LIFE IS ABOUT FIGURING<br />
         OUT WHAT WE CAN AND CANNOT DO.<br />
         OTHERWISE, HOW DO WE KNOW<br />
