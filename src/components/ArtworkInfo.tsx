@@ -16,7 +16,7 @@ const ArtworkInfo = () => {
       
       {/* Menu Button - Bottom Right */}
       <div className="fixed bottom-8 right-8">
-           <button className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
+           <button className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity text-white">
             GALLERY
           </button>
       </div>
