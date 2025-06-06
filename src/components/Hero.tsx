@@ -22,17 +22,7 @@ const Hero = () => {
         </h1>
       </div>
       
-      {/* Quote Text - Top */}
-      <div className="absolute top-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60">
-        THINK ABOUT THE PAST ONLY IF ITS<br />
-        MEMORIES ARE PLEASANT TO YOU
-      </div>
-      
-      {/* Quote Text - Right */}
-      <div className="absolute top-1/3 right-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
-        NO ONE APPRECIATES SOLID FUND<br />
-        THAT IS TOO MUCH.
-      </div>
+   
       
       {/* Quote Text - Bottom */}
       <div className="absolute bottom-32 right-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
