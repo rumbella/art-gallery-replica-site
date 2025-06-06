@@ -32,11 +32,7 @@ const Hero = () => {
         WHEN WE HAVE DONE WELL?
       </div>
       
-      {/* Bottom Quote */}
-      <div className="absolute bottom-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60">
-        I'LL THINK ABOUT DAY OF THING LATER, WHEN<br />
-        I FIND THE STRENGTH TO RISE UP.
-      </div>
+   
     </div>
   );
 };
