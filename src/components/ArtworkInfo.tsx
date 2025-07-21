@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 
 const ArtworkInfo = () => {
@@ -16,9 +17,9 @@ const ArtworkInfo = () => {
       
       {/* Menu Button - Bottom Right */}
       <div className="fixed bottom-8 right-8">
-           <button className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity text-white">
+           <Link to="/gallery" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity text-white">
             GALLERY
-          </button>
+          </Link>
       </div>
     </>
   );
