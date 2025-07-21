@@ -16,8 +16,7 @@ const Gallery = () => {
         </Link>
       </div>
 
-      <div className="max-w-6xl mx-auto p-6 pt-20">
-        <h1 className="text-3xl font-bold mb-8 text-center text-foreground">Portfolio Gallery</h1>
+      <div className="max-w-6xl mx-auto">
         
         {/* Main gallery container */}
         <article className="overflow-hidden">
