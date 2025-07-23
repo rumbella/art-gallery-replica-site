@@ -7,6 +7,15 @@ const Gallery = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Back button */}
       <div className="fixed top-6 left-6 z-50">
+          <Link 
+          to="/"
+        class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50">
+        <span class="mr-1 font-bold text-lg">BACK</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+            </path>
+        </svg>
+    </Link>
         <Link 
           to="/" 
           className="flex items-center text-foreground text-sm font-light tracking-wider hover:opacity-80 transition-opacity"
