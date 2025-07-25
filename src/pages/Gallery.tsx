@@ -9,7 +9,7 @@ const Gallery = () => {
       <div className="fixed top-6 left-6 z-50">
           <Link 
           to="/"
-        class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50 bg-white">
+        class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50 bg-white backdrop-blur-md">
        
          <ArrowLeft className="mr-2 w-4 h-4" />
             <span class="mr-1 font-bold text-lg">BACK</span>
