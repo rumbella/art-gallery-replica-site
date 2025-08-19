@@ -9,7 +9,7 @@ const Gallery = () => {
       <div className="fixed top-6 left-6 z-50">
         <Link 
           to="/" 
-          className="inline-flex items-center px-3 py-1.5 text-white hover:opacity-80 transition-opacity"
+          className="inline-flex items-center px-6 py-2 text-white hover:opacity-80 transition-opacity min-w-[120px] justify-center"
           style={{
             background: 'rgba(255, 255, 255, 0.12)',
             borderRadius: '16px',
