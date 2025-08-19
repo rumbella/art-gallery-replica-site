@@ -7,19 +7,20 @@ const Gallery = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Back button */}
       <div className="fixed top-6 left-6 z-50">
-          <Link 
-          to="/"
-        class="inline-flex items-center border border-indigo-300 px-3 py-1.5 rounded-md text-indigo-500 hover:bg-indigo-50 bg-white backdrop-blur-md">
-       
-         <ArrowLeft className="mr-2 w-4 h-4" />
-            <span class="mr-1 font-bold text-lg">BACK</span>
-    </Link>
         <Link 
           to="/" 
-          className="flex items-center text-foreground text-sm font-light tracking-wider hover:opacity-80 transition-opacity"
+          className="inline-flex items-center px-3 py-1.5 text-white hover:opacity-80 transition-opacity"
+          style={{
+            background: 'rgba(255, 255, 255, 0.12)',
+            borderRadius: '16px',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(7.9px)',
+            WebkitBackdropFilter: 'blur(7.9px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}
         >
-          <ArrowLeft className="mr-2 w-4 h-4" />
-          BACK
+          <ArrowLeft className="mr-2 w-4 h-4 text-white" />
+          <span className="font-bold text-lg text-white">BACK</span>
         </Link>
       </div>
 
