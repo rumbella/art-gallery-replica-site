@@ -125,3 +125,27 @@
     opacity: 0.8;
   }
 }
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 1em;
+}
+
+.masonry-grid-item {
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    column-count: 1;
+  }
+}

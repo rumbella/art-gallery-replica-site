@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import PageTransition from "./components/PageTransition";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
+import Sculpture from "./pages/Sculpture";
+import Painting from "./pages/Painting";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +20,8 @@ const AnimatedRoutes = () => {
       <Routes location={location}>
         <Route path="/" element={<Index />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/sculpture" element={<Sculpture />} />
+        <Route path="/painting" element={<Painting />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
