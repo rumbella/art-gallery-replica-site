@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Menu } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -11,12 +11,13 @@ const Header = () => {
           <p className="text-xs opacity-60 mt-1">pittore</p>
         </div>
         
-        <div className="text-white">
-         
-           <button className="flex items-center text-white text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
-          MENU
-          <Menu className="ml-2 w-4 h-4" />
-        </button>
+        <div className="text-white flex space-x-4">
+          <Link to="/sculpture" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
+            SCULPTURE
+          </Link>
+          <Link to="/painting" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
+            PAINTING
+          </Link>
         </div>
       </div>
     </header>
