@@ -31,7 +31,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
             // Set initial position for current page (slide in from left)
             gsap.set(currentPage, {
               x: '-100%',
-              zIndex: 2
+              zIndex: 100
             });
             
             if (prevPage) {

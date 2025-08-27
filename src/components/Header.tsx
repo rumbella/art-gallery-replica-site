@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 p-6">
+    <header className="fixed top-0 left-0 right-0 z-10 p-6">
       <div className="flex justify-between items-start">
         <div className="text-white">
           <h1 className="text-sm font-light tracking-wider">GIACOMO PIUSSI</h1>

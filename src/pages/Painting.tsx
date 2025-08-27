@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -21,18 +20,10 @@ const Painting = () => {
       <div className="fixed top-6 left-6 z-50">
         <Link
           to="/"
-          className="inline-flex items-center px-6 py-2 text-white hover:opacity-80 transition-opacity min-w-[120px] justify-center"
-          style={{
-            background: 'rgba(255, 255, 255, 0.12)',
-            borderRadius: '16px',
-            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-            backdropFilter: 'blur(7.9px)',
-            WebkitBackdropFilter: 'blur(7.9px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)'
-          }}
+          className="flex items-center gap-3 text-white backdrop-blur-sm bg-black/20 px-6 py-3 rounded-full hover:bg-black/30 transition-all duration-300"
         >
-          <ArrowLeft className="mr-2 w-4 h-4 text-white" />
-          <span className="font-bold text-lg text-white">BACK</span>
+          <span className="text-sm font-light tracking-wider">BACK</span>
+          <span className="text-xl font-light">⟵</span>
         </Link>
       </div>
 
