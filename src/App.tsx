@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import Sculpture from "./pages/Sculpture";
 import Painting from "./pages/Painting";
+import Exhibition from "./pages/Exhibition";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const AnimatedRoutes = () => {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/sculpture" element={<Sculpture />} />
         <Route path="/painting" element={<Painting />} />
+        <Route path="/exhibition" element={<Exhibition />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
