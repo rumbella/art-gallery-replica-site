@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import SculptureSection from '@/components/SculptureSection';
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { useImageColor } from '@/hooks/useImageColor';
+import { useOverlay } from '@/context/OverlayContext';
+import { X } from 'lucide-react';
 
 const sculptures = [
   { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651070/giacomo/tFdPgitxQ6sfC6HnLSmnan5C4_1.jpg", alt: "Sculpture 1" },
@@ -14,32 +13,72 @@ const sculptures = [
 ];
 
 const Sculpture = () => {
-  useEffect(() => {
-    // Smooth scrolling configuration
-    gsap.config({ 
-      force3D: true,
-      nullTargetWarn: false 
-    });
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+  const { color: bgColor } = useImageColor(selectedImage?.src || '');
+  const { setIsOverlayVisible: setGlobalOverlayVisible } = useOverlay();
 
-    // Cleanup on unmount
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  useEffect(() => {
+    if (selectedImage) {
+      setGlobalOverlayVisible(true);
+      const timer = setTimeout(() => setIsOverlayVisible(true), 10);
+      return () => clearTimeout(timer);
+    }
+  }, [selectedImage, setGlobalOverlayVisible]);
+
+  const openFullScreen = (image: { src: string; alt: string }) => {
+    setSelectedImage(image);
+    window.scrollTo(0, 0);
+  };
+
+  const closeFullScreen = () => {
+    setIsOverlayVisible(false);
+    setGlobalOverlayVisible(false);
+    setTimeout(() => {
+      setSelectedImage(null);
+    }, 500);
+  };
 
   return (
-    <div>
-      {sculptures.map((sculpture, index) => (
-        <SculptureSection 
-          key={sculpture.id} 
-          sculpture={sculpture} 
-          index={index}
-        />
-      ))}
-      
-      <div className="fixed bottom-8 right-8 text-black/60 font-inter text-xs tracking-widest z-50 mix-blend-difference">
-        KEEP SCROLLING
+    <div className="min-h-screen bg-custom-bg text-foreground">
+      <div className="mx-auto">
+        <article className="overflow-hidden">
+          <div className="masonry-grid">
+            {sculptures.map((sculpture) => (
+              <div key={sculpture.id} onClick={() => openFullScreen(sculpture)} className="p-1">
+                <img src={sculpture.src} alt={sculpture.alt} className="w-full h-auto block cursor-pointer rounded-[22px]" />
+              </div>
+            ))}
+          </div>
+        </article>
       </div>
+
+      {selectedImage && createPortal(
+        <div
+          onClick={closeFullScreen}
+          className={`fixed inset-0 z-50 flex items-center justify-center transition-transform duration-500 ease-in-out ${
+            isOverlayVisible ? 'translate-y-0' : '-translate-y-full'
+          }`}
+          style={{ backgroundColor: bgColor }}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeFullScreen();
+            }}
+            className="fixed top-6 right-6 z-50 flex items-center gap-3 text-white backdrop-blur-sm bg-black/20 px-4 py-4 rounded-full hover:bg-black/30 transition-all duration-300"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <img
+            onClick={(e) => e.stopPropagation()}
+            src={selectedImage.src}
+            alt={selectedImage.alt}
+            className="max-h-full max-w-full object-contain"
+          />
+        </div>,
+        document.body
+      )}
     </div>
   );
 };
