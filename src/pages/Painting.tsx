@@ -16,12 +16,12 @@ const paintings = [
 
 const Painting = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-custom-bg text-foreground">
       <div className="mx-auto">
         <article className="overflow-hidden">
           <div className="masonry-grid">
             {paintings.map((painting) => (
-              <div key={painting.id} className="masonry-grid-item">
+              <div key={painting.id}>
                 <Dialog>
                   <DialogTrigger asChild>
                     <img src={painting.src} alt={painting.alt} className="w-full h-auto block cursor-pointer" />
