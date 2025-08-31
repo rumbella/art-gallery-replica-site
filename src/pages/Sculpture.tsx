@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SculptureSection from '@/components/SculptureSection';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const sculptures = [
   { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651070/giacomo/tFdPgitxQ6sfC6HnLSmnan5C4_1.jpg", alt: "Sculpture 1" },
@@ -15,20 +14,30 @@ const sculptures = [
 ];
 
 const Sculpture = () => {
+  useEffect(() => {
+    // Smooth scrolling configuration
+    gsap.config({ 
+      force3D: true,
+      nullTargetWarn: false 
+    });
+
+    // Cleanup on unmount
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-custom-bg text-foreground overflow-y-auto snap-y snap-mandatory">
-      <div className="flex flex-col w-full">
-        {sculptures.map((sculpture) => (
-          <div key={sculpture.id} className="flex-shrink-0 w-full h-screen snap-center flex items-center justify-center">
-            <img
-              src={sculpture.src}
-              alt={sculpture.alt}
-              className="h-full w-auto object-cover"
-            />
-          </div>
-        ))}
-      </div>
-      <div className="fixed bottom-8 right-8 text-white font-inter text-sm tracking-wider vertical-text">
+    <div className="min-h-screen text-foreground overflow-y-auto snap-y snap-mandatory scroll-smooth">
+      {sculptures.map((sculpture, index) => (
+        <SculptureSection 
+          key={sculpture.id} 
+          sculpture={sculpture} 
+          index={index}
+        />
+      ))}
+      
+      <div className="fixed bottom-8 right-8 text-black/60 font-inter text-xs tracking-widest z-50 mix-blend-difference">
         KEEP SCROLLING
       </div>
     </div>
