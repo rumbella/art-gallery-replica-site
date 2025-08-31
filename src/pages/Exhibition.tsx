@@ -87,8 +87,8 @@ const Exhibition = () => {
         <div className="max-w-7xl mx-auto">
           
           <header className="mb-16">
-            <h1 className="text-5xl font-bold tracking-tighter mb-2">Giacomo Piussi</h1>
-            <p className="text-lg text-gray-600">Artist</p>
+            <h1 className="text-5xl font-light tracking-wider mb-2">Giacomo Piussi</h1>
+            <p className="text-lg text-gray-500">Artist</p>
           </header>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-16">
@@ -108,12 +108,12 @@ const Exhibition = () => {
 
             <main className="md:col-span-8 lg:col-span-9">
               <section className="mb-16">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8 border-b pb-4">Solo Shows</h2>
-                <div className="space-y-10">
+                <h2 className="text-3xl tracking-tight text-gray-900 mb-8 border-b border-gray-300 pb-4">Solo Shows</h2>
+                <div>
                   {soloShows.map((item) => (
-                    <div key={item.year} className="grid grid-cols-1 sm:grid-cols-4 gap-x-6">
+                    <div key={item.year} className="grid grid-cols-1 sm:grid-cols-4 gap-x-6 border-b border-gray-300 py-6">
                       <div className="sm:col-span-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2 sm:mb-0">{item.year}</h3>
+                        <h3 className="text-lg text-gray-900 mb-2 sm:mb-0">{item.year}</h3>
                       </div>
                       <div className="sm:col-span-3">
                         <ul className="space-y-2">
@@ -128,12 +128,12 @@ const Exhibition = () => {
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8 border-b pb-4">Group Shows</h2>
-                <div className="space-y-10">
+                <h2 className="text-3xl tracking-tight text-gray-900 mb-8 border-b border-gray-300 pb-4">Group Shows</h2>
+                <div>
                   {groupShows.map((item) => (
-                    <div key={item.year} className="grid grid-cols-1 sm:grid-cols-4 gap-x-6">
+                    <div key={item.year} className="grid grid-cols-1 sm:grid-cols-4 gap-x-6 border-b border-gray-300 py-6">
                       <div className="sm:col-span-1">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2 sm:mb-0">{item.year}</h3>
+                        <h3 className="text-lg text-gray-900 mb-2 sm:mb-0">{item.year}</h3>
                       </div>
                       <div className="sm:col-span-3">
                         <ul className="space-y-2">

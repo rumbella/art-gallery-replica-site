@@ -18,6 +18,9 @@ const Header = () => {
           <Link to="/painting" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
             PAINTING
           </Link>
+          <Link to="/exhibition" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
+            EXHIBITION
+          </Link>
         </div>
       </div>
     </header>
