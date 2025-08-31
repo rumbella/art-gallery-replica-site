@@ -19,9 +19,8 @@ const queryClient = new QueryClient();
 const AnimatedRoutes = () => {
   const location = useLocation();
   
-  // Enable smooth scroll for all pages except sculpture (which needs snap scrolling)
-  const isScrollDisabled = location.pathname === '/sculpture';
-  useSmoothScroll(!isScrollDisabled);
+  // Enable smooth scroll for all pages
+  useSmoothScroll(true);
 
   return (
     <PageTransition>
