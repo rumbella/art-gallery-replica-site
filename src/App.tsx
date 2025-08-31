@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import BackButton from "./components/BackButton";
 import PageTransition from "./components/PageTransition";
+import { OverlayProvider } from "./context/OverlayContext";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
@@ -43,8 +44,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <BackButton />
-        <AnimatedRoutes />
+        <OverlayProvider>
+          <BackButton />
+          <AnimatedRoutes />
+        </OverlayProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

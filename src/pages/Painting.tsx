@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useImageColor } from '@/hooks/useImageColor';
+import { useOverlay } from '@/context/OverlayContext';
+import { X } from 'lucide-react';
 
 const paintings = [
   { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651068/giacomo/9go4ianxzSirNb6c4wzcMKU5no_1.jpg", alt: "Painting 1" },
@@ -22,25 +24,27 @@ const Painting = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const { color: bgColor } = useImageColor(selectedImage?.src || '');
+  const { setIsOverlayVisible: setGlobalOverlayVisible } = useOverlay();
 
   useEffect(() => {
     if (selectedImage) {
-      // Delay to allow the component to mount before transitioning
+      setGlobalOverlayVisible(true);
       const timer = setTimeout(() => setIsOverlayVisible(true), 10);
       return () => clearTimeout(timer);
     }
-  }, [selectedImage]);
+  }, [selectedImage, setGlobalOverlayVisible]);
 
   const openFullScreen = (image: { src: string; alt: string }) => {
     setSelectedImage(image);
+    window.scrollTo(0, 0);
   };
 
   const closeFullScreen = () => {
     setIsOverlayVisible(false);
-    // Delay to allow the transition to finish before unmounting
+    setGlobalOverlayVisible(false);
     setTimeout(() => {
       setSelectedImage(null);
-    }, 500); // This duration should match the transition duration
+    }, 500);
   };
 
   return (
@@ -70,9 +74,9 @@ const Painting = () => {
               e.stopPropagation();
               closeFullScreen();
             }}
-            className="absolute top-4 right-4 text-white text-2xl z-10"
+            className="fixed top-6 right-6 z-50 flex items-center gap-3 text-white backdrop-blur-sm bg-black/20 px-4 py-4 rounded-full hover:bg-black/30 transition-all duration-300"
           >
-            &times;
+            <X className="w-6 h-6" />
           </button>
           <img
             onClick={(e) => e.stopPropagation()}
