@@ -16,24 +16,20 @@ const sculptures = [
 
 const Sculpture = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto">
-        <article className="overflow-hidden">
-          <div className="masonry-grid">
-            {sculptures.map((sculpture) => (
-              <div key={sculpture.id} className="masonry-grid-item">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <img src={sculpture.src} alt={sculpture.alt} className="w-full h-auto block cursor-pointer" />
-                  </DialogTrigger>
-                  <DialogContent className="p-0 border-0 max-w-none w-auto h-auto">
-                    <img src={sculpture.src.replace('w=400', 'w=1200').replace('h=400', 'h=1200')} alt={sculpture.alt} className="max-h-[90vh] max-w-[90vw] object-contain" />
-                  </DialogContent>
-                </Dialog>
-              </div>
-            ))}
+    <div className="min-h-screen bg-custom-bg text-foreground overflow-hidden">
+      <div className="flex w-full h-screen overflow-x-auto snap-x snap-mandatory">
+        {sculptures.map((sculpture) => (
+          <div key={sculpture.id} className="flex-shrink-0 w-full h-full snap-center flex items-center justify-center">
+            <img
+              src={sculpture.src.replace('w=400', 'w=1200').replace('h=400', 'h=1200')}
+              alt={sculpture.alt}
+              className="h-full w-auto object-contain"
+            />
           </div>
-        </article>
+        ))}
+      </div>
+      <div className="fixed bottom-8 right-8 text-white font-inter text-sm tracking-wider vertical-text">
+        KEEP SCROLLING
       </div>
     </div>
   );

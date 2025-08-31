@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Exhibition = () => {
   return (
-    <div className="min-h-screen font-inter text-black" style={{ backgroundColor: '#ccc' }}>
+    <div className="min-h-screen font-inter text-black bg-custom-bg">
       <div className="container mx-auto px-6 py-20">
         {/* Swiss design grid structure */}
         <div className="max-w-6xl mx-auto">
