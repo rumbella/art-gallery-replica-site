@@ -21,7 +21,7 @@ const Sculpture = () => {
         {sculptures.map((sculpture) => (
           <div key={sculpture.id} className="flex-shrink-0 w-full h-full snap-center flex items-center justify-center">
             <img
-              src={sculpture.src.replace('w=400', 'w=1200').replace('h=400', 'h=1200')}
+              src={sculpture.src}
               alt={sculpture.alt}
               className="h-full w-auto object-cover"
             />
