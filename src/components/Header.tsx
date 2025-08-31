@@ -11,7 +11,7 @@ const Header = () => {
           <p className="text-xs opacity-60 mt-1">pittore</p>
         </div>
         
-        <div className="text-white flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+        <div className="text-white flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4">
           <Link to="/sculpture" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
             SCULPTURE
           </Link>
