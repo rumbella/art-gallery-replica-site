@@ -23,7 +23,7 @@ const Sculpture = () => {
             <img
               src={sculpture.src.replace('w=400', 'w=1200').replace('h=400', 'h=1200')}
               alt={sculpture.alt}
-              className="h-full w-auto object-contain"
+              className="h-full w-auto object-cover"
             />
           </div>
         ))}
