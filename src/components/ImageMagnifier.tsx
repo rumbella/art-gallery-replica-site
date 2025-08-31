@@ -46,19 +46,19 @@ const ImageMagnifier: React.FC<ImageMagnifierProps> = ({
   };
 
   if (isMobile) {
-    return <img src={src} alt={alt} className={className} />;
+    return <img src={src} alt={alt} className={className} onClick={onClick} />;
   }
 
   return (
     <div
-      className="relative"
+      className={`relative ${className}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <img
         src={src}
         alt={alt}
-        className={className}
+        className="w-full h-full object-contain"
         onMouseMove={handleMouseMove}
         onClick={onClick}
       />
