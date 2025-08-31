@@ -4,17 +4,6 @@ import { Link } from 'react-router-dom';
 const Exhibition = () => {
   return (
     <div className="min-h-screen font-inter text-black" style={{ backgroundColor: '#ccc' }}>
-      <div className="fixed top-6 left-6 z-50">
-        <Link
-          to="/"
-          className="flex items-center gap-3 text-black bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full hover:bg-white transition-all duration-300"
-          style={{ border: '4px solid black' }}
-        >
-          <span className="text-xl font-light">⟵</span>
-          <span className="text-sm font-light tracking-wider">BACK</span>
-        </Link>
-      </div>
-
       <div className="container mx-auto px-6 py-20">
         {/* Swiss design grid structure */}
         <div className="max-w-6xl mx-auto">
