@@ -93,18 +93,7 @@ const Exhibition = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-16">
 
-            <aside className="md:col-span-4 lg:col-span-3">
-              <div className="sticky top-24 space-y-8">
-                <div>
-                  <h2 className="text-sm font-mono uppercase tracking-wider text-gray-500 mb-3">Biography</h2>
-                  <p className="text-base text-gray-700">
-                    Born in Udine, July 5, 1967.
-                    <br />
-                    Lives and works in Florence, Italy.
-                  </p>
-                </div>
-              </div>
-            </aside>
+           
 
             <main className="md:col-span-8 lg:col-span-9">
               <section className="mb-16">
