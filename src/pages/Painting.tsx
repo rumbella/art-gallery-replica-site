@@ -84,7 +84,7 @@ const Painting = () => {
             src={selectedImage.src}
             highResSrc={selectedImage.src.replace('/upload/', '/upload/w_2000/')}
             alt={selectedImage.alt}
-            className="max-h-full max-w-full object-contain"
+            className="max-h-full max-w-full"
             onClick={(e) => e.stopPropagation()}
           />
         </div>,
