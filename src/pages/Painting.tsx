@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { useImageColor } from '@/hooks/useImageColor';
 import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
+import ImageMagnifier from '@/components/ImageMagnifier';
 
 const paintings = [
   { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651068/giacomo/9go4ianxzSirNb6c4wzcMKU5no_1.jpg", alt: "Painting 1" },
@@ -79,11 +80,12 @@ const Painting = () => {
           >
             <X className="w-6 h-6" />
           </button>
-          <img
-            onClick={(e) => e.stopPropagation()}
+          <ImageMagnifier
             src={selectedImage.src}
+            highResSrc={selectedImage.src.replace('/upload/', '/upload/w_2000/')}
             alt={selectedImage.alt}
             className="max-h-full max-w-full object-contain"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>,
         document.body
