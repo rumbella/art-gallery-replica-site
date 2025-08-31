@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useImageColor } from '@/hooks/useImageColor';
 import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
@@ -61,7 +62,7 @@ const Painting = () => {
         </article>
       </div>
 
-      {selectedImage && (
+      {selectedImage && createPortal(
         <div
           onClick={closeFullScreen}
           className={`fixed inset-0 z-50 flex items-center justify-center transition-transform duration-500 ease-in-out ${
@@ -84,7 +85,8 @@ const Painting = () => {
             alt={selectedImage.alt}
             className="max-h-full max-w-full object-contain"
           />
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
