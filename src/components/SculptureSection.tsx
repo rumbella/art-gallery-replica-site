@@ -68,7 +68,7 @@ const SculptureSection: React.FC<SculptureSectionProps> = ({ sculpture, index })
   return (
     <section
       ref={sectionRef}
-      className="w-full h-screen snap-center flex items-center justify-center relative overflow-hidden transition-colors duration-1000"
+      className="w-full h-screen snap-start snap-always flex items-center justify-center relative overflow-hidden transition-colors duration-1000"
       style={{
         backgroundColor: loading ? '#ccc' : color,
       }}

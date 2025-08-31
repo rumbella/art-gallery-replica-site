@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import BackButton from "./components/BackButton";
 import PageTransition from "./components/PageTransition";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import Sculpture from "./pages/Sculpture";
@@ -16,6 +17,10 @@ const queryClient = new QueryClient();
 
 const AnimatedRoutes = () => {
   const location = useLocation();
+  
+  // Enable smooth scroll for all pages except sculpture (which needs snap scrolling)
+  const isScrollDisabled = location.pathname === '/sculpture';
+  useSmoothScroll(!isScrollDisabled);
 
   return (
     <PageTransition>
