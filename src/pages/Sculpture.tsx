@@ -28,7 +28,7 @@ const Sculpture = () => {
   }, []);
 
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory">
+    <div>
       {sculptures.map((sculpture, index) => (
         <SculptureSection 
           key={sculpture.id} 
