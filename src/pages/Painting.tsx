@@ -53,8 +53,8 @@ const Painting = () => {
         <article className="overflow-hidden">
           <div className="masonry-grid">
             {paintings.map((painting) => (
-              <div key={painting.id} onClick={() => openFullScreen(painting)}>
-                <img src={painting.src} alt={painting.alt} className="w-full h-auto block cursor-pointer" />
+              <div key={painting.id} onClick={() => openFullScreen(painting)} className="p-1">
+                <img src={painting.src} alt={painting.alt} className="w-full h-auto block cursor-pointer rounded-[22px]" />
               </div>
             ))}
           </div>
