@@ -24,17 +24,7 @@ const Hero = () => {
       
    
       
-      {/* Quote Text - Bottom */}
-      <div className="absolute bottom-32 left-8 max-w-xs text-white text-xs leading-relaxed opacity-60 text-right">
-        The environment and the characters that live within it are the quintessence of ease, <br />
-        peace and self-containment. The figures are gods in their daily Olympus.<br />
-        It is an ideal world that recalls common gestures, <br />
-        a step away from the flow of time and in the same moment, part of contemporary life.<br />
-        The drama, or the lack thereof, is played out in simplified, <br />
-        almost abstract spaces, geometric backgrounds in which self-aware characters inhabit<br />
-        bourgeois interiors or a minimalist wilderness.”.
-       
-      </div>
+ 
       
    
     </div>
