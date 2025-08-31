@@ -17,7 +17,7 @@ const sculptures = [
 const Sculpture = () => {
   return (
     <div className="min-h-screen bg-custom-bg text-foreground overflow-hidden">
-      <div className="flex w-full h-screen overflow-x-auto snap-y snap-mandatory">
+      <div className="flex w-full h-screen overflow-x-auto snap-x snap-mandatory">
         {sculptures.map((sculpture) => (
           <div key={sculpture.id} className="flex-shrink-0 w-full h-full snap-center flex items-center justify-center">
             <img
