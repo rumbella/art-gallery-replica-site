@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useOverlay } from '@/context/OverlayContext';
 
 const BackButton = () => {
   const location = useLocation();
+  const { isOverlayVisible } = useOverlay();
 
-  if (location.pathname === '/') {
+  if (location.pathname === '/' || isOverlayVisible) {
     return null;
   }
 
