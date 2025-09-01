@@ -66,9 +66,17 @@ const Sculpture = () => {
               e.stopPropagation();
               closeFullScreen();
             }}
-            className="fixed top-6 right-6 z-50 backdrop-blur-sm bg-black/20 hover:bg-black/30 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
+            className="fixed top-6 right-6 z-50 flex items-center gap-2 text-white hover:opacity-80 transition-all duration-300"
           >
-            <X className="w-5 h-5 text-white" />
+            {/* Icon container - completely round */}
+            <div className="backdrop-blur-sm bg-black/20 hover:bg-black/30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+              <X className="w-4 h-4 text-white" />
+            </div>
+            
+            {/* Text container - completely round */}
+            <div className="backdrop-blur-sm bg-black/20 hover:bg-black/30 px-4 py-2 rounded-full transition-all duration-300">
+              <span className="text-sm font-light tracking-wider">CLOSE</span>
+            </div>
           </button>
           <img
             onClick={(e) => e.stopPropagation()}
