@@ -18,6 +18,9 @@ const About = () => {
                 <div className="prose prose-lg text-gray-700 max-w-none">
                   <p>Born in 1967 in Udine, lives in Florence. His work develops the idea of substituting the written word with images that is typical of much of the art of non-literate societies of the past.</p>
                   <p>The images are those of a world reduced to its essence, where every element has a function and very little is added to what is needed for the core meaning to be delivered, with a style that is inspired by Early Renaissance art in its clarity of intent: rather than imitating nature in its appearance, there is a reach for the philosophical structure underlying life and relations.</p>
+                </div>
+                <div className="border-b border-gray-300 my-[50px]"></div>
+                <div className="prose prose-lg text-gray-700 max-w-none">
                   <p>The environment and the characters that live within it are the quintessence of ease, peace and self-containment. The figures are gods in their daily Olympus. It is an ideal world that recalls common gestures, a step away from the flow of time and in the same moment, part of contemporary life.</p>
                   <p>The drama, or the lack thereof, is played out in simplified, almost abstract spaces, geometric backgrounds in which self-aware characters inhabit bourgeois interiors or a minimalist wilderness.”.</p>
                 </div>
