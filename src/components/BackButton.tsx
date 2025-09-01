@@ -14,10 +14,17 @@ const BackButton = () => {
     <div className="fixed top-6 left-6 z-50">
       <Link
         to="/"
-        className="flex items-center gap-3 text-white backdrop-blur-sm bg-black/20 px-6 py-3 rounded-full hover:bg-black/30 transition-all duration-300"
+        className="flex items-center gap-2 text-white hover:opacity-80 transition-all duration-300"
       >
-        <span className="text-xl font-light">⟵</span>
-        <span className="text-sm font-light tracking-wider">BACK</span>
+        {/* Arrow container - completely round */}
+        <div className="backdrop-blur-sm bg-black/20 hover:bg-black/30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+          <span className="text-sm font-light">⟵</span>
+        </div>
+        
+        {/* Text container - completely round */}
+        <div className="backdrop-blur-sm bg-black/20 hover:bg-black/30 px-4 py-2 rounded-full transition-all duration-300">
+          <span className="text-sm font-light tracking-wider">BACK</span>
+        </div>
       </Link>
     </div>
   );
