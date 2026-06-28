@@ -27,9 +27,6 @@ const Header = () => {
           <Link to="/contact" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
             CONTACT
           </Link>
-          <Link to="/gallery" className="text-sm font-light tracking-wider hover:opacity-80 transition-opacity">
-            GALLERY
-          </Link>
         </div>
       </div>
     </header>
