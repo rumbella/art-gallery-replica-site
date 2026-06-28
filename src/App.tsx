@@ -8,7 +8,6 @@ import PageTransition from "./components/PageTransition";
 import { OverlayProvider } from "./context/OverlayContext";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import Index from "./pages/Index";
-import Gallery from "./pages/Gallery";
 import Sculpture from "./pages/Sculpture";
 import Painting from "./pages/Painting";
 import Video from "./pages/Video";
@@ -29,7 +28,6 @@ const AnimatedRoutes = () => {
     <PageTransition>
       <Routes location={location}>
         <Route path="/" element={<Index />} />
-        <Route path="/gallery" element={<Gallery />} />
         <Route path="/sculpture" element={<Sculpture />} />
         <Route path="/painting" element={<Painting />} />
         <Route path="/video" element={<Video />} />
