@@ -5,11 +5,14 @@ import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
 
 const sculptures = [
-  { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651070/giacomo/tFdPgitxQ6sfC6HnLSmnan5C4_1.jpg", alt: "Sculpture 1" },
-  { id: 2, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651073/giacomo/3WZTlsJaYlPj3lWgScdi6gTiw_1.jpg", alt: "Sculpture 2" },
-  { id: 3, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651070/giacomo/8IsKshDpc376UAyKxYIKY9m1E0_1.jpg", alt: "Sculpture 3" },
-  { id: 4, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651070/giacomo/EtQsdQPjVZuiB9PBy1nBYAMnp8_1.jpg", alt: "Sculpture 4" },
-  { id: 5, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651073/giacomo/7jWaJ7geij3fuRD3XSAmp6zsOcc_1.jpg", alt: "Sculpture 5" },
+  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/DSC_4027_cf3fkz.jpg", alt: "Sculpture 1" },
+  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/bd2401a8-1b63-4d32-96f1-d47690361977_zhuq2q.jpg", alt: "Sculpture 2" },
+  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8500_qzhhv1.jpg", alt: "Sculpture 3" },
+  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8594_scieud.jpg", alt: "Sculpture 4" },
+  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/spaghetti_dwfrku.jpg", alt: "Sculpture 5" },
+  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/IMG_1123_s50ysv.jpg", alt: "Sculpture 6" },
+  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/underwood_wj1ld8.jpg", alt: "Sculpture 7" },
+  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_0001_pgdyoi.jpg", alt: "Sculpture 8" },
 ];
 
 const Sculpture = () => {

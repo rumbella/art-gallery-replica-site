@@ -5,20 +5,15 @@ import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
 
 const paintings = [
-  { id: 1, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651068/giacomo/9go4ianxzSirNb6c4wzcMKU5no_1.jpg", alt: "Painting 1" },
-  { id: 2, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651067/giacomo/8NcnyIRKFg0KJoKl96yQu40WyQ_1.jpg", alt: "Painting 2" },
-  { id: 3, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651067/giacomo/7a33sCvanjbV33Fq5u4YSFCWEM_1.jpg", alt: "Painting 3" },
-  { id: 4, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651067/giacomo/vNGFLgUO1K7RX3hfwowNigVUss8_1.jpg", alt: "Painting 4" },
-  { id: 5, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651065/giacomo/AZGZCwAmOIoHjQEFs0edh9JkHKM_1.jpg", alt: "Painting 5" },
-  { id: 6, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651065/giacomo/42QhPe4M4cX6FlbdIZ8BVTQU58_1.jpg", alt: "Painting 6" },
-  { id: 7, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651064/giacomo/uLNXhS37mUS7LplNQCO8kgHM0_1.jpg", alt: "Painting 7" },
-  { id: 8, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651064/giacomo/cl7K95ROqhfpkgMVCJZ73fQ_1.jpg", alt: "Painting 8" },
-  { id: 9, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651063/giacomo/QvZYknNqFkUUWIgD4QrCAyUWmlE_1.jpg", alt: "Painting 9" },
-  { id: 10, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651063/giacomo/HF0aOIsNDXyW4P9GFycy9CHPLw_1.jpg", alt: "Painting 10" },
-  { id: 11, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651063/giacomo/bQfQ1wMES0d2sVHFsTmIe4jtEs_1.jpg", alt: "Painting 11" },
-  { id: 12, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651062/giacomo/0D13508jgPYoNhh7KZbGSd87QIo_1.jpg", alt: "Painting 12" },
-  { id: 13, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651062/giacomo/UtDTQUN26D6PdWFJ2dL9WowQURI_1.jpg", alt: "Painting 13" },
-  { id: 14, src: "https://res.cloudinary.com/thinkdigital/image/upload/v1756651046/giacomo/0Obh0hy6R0I4j3flRGqLAqZk_1.jpg", alt: "Painting 14" },
+  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652783/IMG_5607_iansk0.jpg", alt: "Painting 1" },
+  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6800_nlovla.jpg", alt: "Painting 2" },
+  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_7839_wyzh9z.jpg", alt: "Painting 3" },
+  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6806_yrnoju.jpg", alt: "Painting 4" },
+  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_8010_csrf0s.jpg", alt: "Painting 5" },
+  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8554_kfqpap.jpg", alt: "Painting 6" },
+  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8792_gcgrwz.jpg", alt: "Painting 7" },
+  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8778_a8nvwt.jpg", alt: "Painting 8" },
+  { id: 9, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8946_toxuml.jpg", alt: "Painting 9" },
 ];
 
 const Painting = () => {
