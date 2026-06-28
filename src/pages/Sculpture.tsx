@@ -5,18 +5,18 @@ import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
 
 const sculptures = [
-  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/DSC_4027_cf3fkz.jpg", alt: "Sculpture 1" },
-  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/bd2401a8-1b63-4d32-96f1-d47690361977_zhuq2q.jpg", alt: "Sculpture 2" },
-  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8500_qzhhv1.jpg", alt: "Sculpture 3" },
-  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8594_scieud.jpg", alt: "Sculpture 4" },
-  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/spaghetti_dwfrku.jpg", alt: "Sculpture 5" },
-  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/IMG_1123_s50ysv.jpg", alt: "Sculpture 6" },
-  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/underwood_wj1ld8.jpg", alt: "Sculpture 7" },
-  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_0001_pgdyoi.jpg", alt: "Sculpture 8" },
+  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/DSC_4027_cf3fkz.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655947/DSC_4027_wivxai.jpg", alt: "Sculpture 1" },
+  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652757/bd2401a8-1b63-4d32-96f1-d47690361977_zhuq2q.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655944/bd2401a8-1b63-4d32-96f1-d47690361977_wmbnfh.jpg", alt: "Sculpture 2" },
+  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8500_qzhhv1.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655949/DSC_8500_vktyzr.jpg", alt: "Sculpture 3" },
+  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_8594_scieud.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655946/DSC_8594_qxdplp.jpg", alt: "Sculpture 4" },
+  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/spaghetti_dwfrku.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655949/spaghetti_hlxkx4.jpg", alt: "Sculpture 5" },
+  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/IMG_1123_s50ysv.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655950/IMG_1123_pu59mf.jpg", alt: "Sculpture 6" },
+  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/underwood_wj1ld8.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655949/underwood_pzc97c.jpg", alt: "Sculpture 7" },
+  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_0001_pgdyoi.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652756/DSC_0001_pgdyoi.jpg", alt: "Sculpture 8" }, // No full size provided for DSC_0001
 ];
 
 const Sculpture = () => {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; fullSrc: string; alt: string } | null>(null);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const { color: bgColor } = useImageColor(selectedImage?.src || '');
   const { setIsOverlayVisible: setGlobalOverlayVisible } = useOverlay();
@@ -29,7 +29,7 @@ const Sculpture = () => {
     }
   }, [selectedImage, setGlobalOverlayVisible]);
 
-  const openFullScreen = (image: { src: string; alt: string }) => {
+  const openFullScreen = (image: { src: string; fullSrc: string; alt: string }) => {
     setSelectedImage(image);
     window.scrollTo(0, 0);
   };
@@ -83,7 +83,7 @@ const Sculpture = () => {
           </button>
           <img
             onClick={(e) => e.stopPropagation()}
-            src={selectedImage.src}
+            src={selectedImage.fullSrc}
             alt={selectedImage.alt}
             className="max-h-full max-w-full object-contain"
           />
