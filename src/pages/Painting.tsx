@@ -5,19 +5,21 @@ import { useOverlay } from '@/context/OverlayContext';
 import { X } from 'lucide-react';
 
 const paintings = [
-  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652783/IMG_5607_iansk0.jpg", alt: "Painting 1" },
-  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6800_nlovla.jpg", alt: "Painting 2" },
-  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_7839_wyzh9z.jpg", alt: "Painting 3" },
-  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6806_yrnoju.jpg", alt: "Painting 4" },
-  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_8010_csrf0s.jpg", alt: "Painting 5" },
-  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8554_kfqpap.jpg", alt: "Painting 6" },
-  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8792_gcgrwz.jpg", alt: "Painting 7" },
-  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8778_a8nvwt.jpg", alt: "Painting 8" },
-  { id: 9, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8946_toxuml.jpg", alt: "Painting 9" },
+  { id: 1, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652783/IMG_5607_iansk0.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655942/IMG_5607_oygghd.jpg", alt: "Painting 1" },
+  { id: 2, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6800_nlovla.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655925/IMG_6800_owjxqe.jpg", alt: "Painting 2" },
+  { id: 3, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_7839_wyzh9z.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655930/IMG_7839_eqeh3t.jpg", alt: "Painting 3" },
+  { id: 4, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652782/IMG_6806_yrnoju.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655942/IMG_6806_aco3fp.jpg", alt: "Painting 4" },
+  { id: 5, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652781/IMG_8010_csrf0s.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655940/IMG_8010_rcng6d.jpg", alt: "Painting 5" },
+  { id: 6, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8554_kfqpap.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655939/IMG_8554_hftpjb.jpg", alt: "Painting 6" },
+  { id: 7, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8792_gcgrwz.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655933/IMG_8792_hso3du.jpg", alt: "Painting 7" },
+  { id: 8, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8778_a8nvwt.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655932/IMG_8778_ldbx3u.jpg", alt: "Painting 8" },
+  { id: 9, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782652780/IMG_8946_toxuml.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655941/IMG_8946_xj7giq.jpg", alt: "Painting 9" },
+  { id: 10, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655940/IMG_2980_h4xlid.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655940/IMG_2980_h4xlid.jpg", alt: "Painting 10" },
+  { id: 11, src: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655933/IMG_5410_gosj5z.jpg", fullSrc: "https://res.cloudinary.com/dg9st86xi/image/upload/v1782655933/IMG_5410_gosj5z.jpg", alt: "Painting 11" },
 ];
 
 const Painting = () => {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; fullSrc: string; alt: string } | null>(null);
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const { color: bgColor } = useImageColor(selectedImage?.src || '');
   const { setIsOverlayVisible: setGlobalOverlayVisible } = useOverlay();
@@ -30,7 +32,7 @@ const Painting = () => {
     }
   }, [selectedImage, setGlobalOverlayVisible]);
 
-  const openFullScreen = (image: { src: string; alt: string }) => {
+  const openFullScreen = (image: { src: string; fullSrc: string; alt: string }) => {
     setSelectedImage(image);
     window.scrollTo(0, 0);
   };
@@ -84,7 +86,7 @@ const Painting = () => {
           </button>
           <img
             onClick={(e) => e.stopPropagation()}
-            src={selectedImage.src}
+            src={selectedImage.fullSrc}
             alt={selectedImage.alt}
             className="max-h-full max-w-full object-contain"
           />
